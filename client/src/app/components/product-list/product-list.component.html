@@ -18,7 +18,7 @@
             <button class="btn btn-danger" (click)="deleteProduct(product.id)">
                 Törlés
             </button>
-            <button class="btn btn-secondary">
+            <button class="btn btn-secondary" [routerLink]="['/product/edit', product.id]">
                 Update
             </button>
         </div>
