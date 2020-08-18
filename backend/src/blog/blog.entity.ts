@@ -1,10 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { BaseEntity } from "../base-entity";
 
-@Entity("blog")
+@Entity('blog')
 export class Blog extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
     @Column({ type: "varchar", length: 100, nullable: false})
     title: string;
     @Column({ type: "varchar", length: 100, nullable: false})

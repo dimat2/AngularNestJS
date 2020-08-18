@@ -71,7 +71,42 @@
       <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
       <button (click)="createPost()" mat-fab color="primary">
         <mat-icon>add</mat-icon>
-      </button>  
+      </button>
     </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>add</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="position_add_1()">
+        <span>Title</span>
+      </button>
+      <button mat-menu-item (click)="position_add_2()">
+        <span>Subtitle</span>
+      </button>
+      <button mat-menu-item (click)="position_add_3()">
+        <span>ImageURL</span>
+      </button>
+      <button mat-menu-item (click)="position_add_4()">
+        <span>Content</span>
+      </button>
+    </mat-menu>
+    
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="position_remove_1()">
+        <span>Title</span>
+      </button>
+      <button mat-menu-item (click)="position_remove_2()">
+        <span>Subtitle</span>
+      </button>
+      <button mat-menu-item (click)="position_remove_3()">
+        <span>ImageURL</span>
+      </button>
+      <button mat-menu-item (click)="position_remove_4()">
+        <span>Content</span>
+      </button>
+    </mat-menu>
   </div>
 </div>

@@ -1,3 +1,3 @@
 export const AppConfig = {
-    url: "https://entrycoord-usermanagement.herokuapp.com"
+    url: "http://localhost:3000"
 }

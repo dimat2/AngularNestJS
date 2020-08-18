@@ -1,4 +1,5 @@
-<h1 mat-dialog-title>New Post Dialog</h1>
+<h1 mat-dialog-title *ngIf="isEditing">Edit Post Dialog</h1>
+<h1 mat-dialog-title *ngIf="!isEditing">New Post Dialog</h1>
 <div class="container-fluid">
     <form #form="ngForm">
         <div class="row">

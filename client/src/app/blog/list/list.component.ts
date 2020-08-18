@@ -16,6 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'title', 'subtitle', 'imageURL', 'content', 'action'];
+  columnsToDisplay: string[] = this.displayedColumns.slice();
 
   isLoading = false;
 
@@ -74,16 +75,54 @@ export class ListComponent implements OnInit {
 
     ref.afterClosed().subscribe((newPost: PostListItem) => {
       if (newPost) {
-        const list = this.postListSubject.getValue();
+        this.postService.findAll()
+          .pipe(finalize(() => (this.isLoading = false)))
+          .subscribe((postListItems) =>
+            this.postListSubject.next(postListItems)
+          );
+        /* const list = this.postListSubject.getValue();
         list.reverse();
         list.push(newPost);
         list.reverse();
-        this.postListSubject.next(_.cloneDeep(list));
+        console.log(list);
+        this.postListSubject.next(_.cloneDeep(list)); */
 
         this.snackBar.open(`Létrehozva: ${newPost.title}`, null, {
           duration: 2500
         });
       }
     });
+  }
+
+  position_add_1() {
+    this.columnsToDisplay.splice(0, 1);
+  }
+
+  position_add_2() {
+    this.columnsToDisplay.splice(0, 2);
+  }
+
+  position_add_3() {
+    this.columnsToDisplay.splice(0, 3);
+  }
+
+  position_add_4() {
+    this.columnsToDisplay.splice(0, 4);
+  }
+
+  position_remove_1() {
+    this.columnsToDisplay.splice(0, 1);
+  }
+
+  position_remove_2() {
+    this.columnsToDisplay.splice(0, 2);
+  }
+
+  position_remove_3() {
+    this.columnsToDisplay.splice(0, 3);
+  }
+
+  position_remove_4() {
+    this.columnsToDisplay.splice(0, 4);
   }
 }
