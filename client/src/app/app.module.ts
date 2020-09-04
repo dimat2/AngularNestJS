@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { ConfirmComponent } from './blog/confirm/confirm.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatInputModule, 
     FormsModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
